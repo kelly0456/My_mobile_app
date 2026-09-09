@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:http/http.dart';
+import 'package:flutter_iconly_plus/flutter_iconly_plus.dart';
 import 'package:provider/provider.dart';
-import 'package:test_app/ui/screens/auth/login_screen.dart';
-import 'package:test_app/ui/screens/cartscreen%20.dart';
-
-import 'package:test_app/ui/screens/home_screen.dart';
-import 'package:test_app/ui/screens/profilescreen.dart';
-
-import 'package:test_app/ui/screens/searchscreen.dart';
-import 'package:test_app/ui/screens/viewmodels/auth_startup_viewmodel.dart';
+import 'package:my_mobile_app/providers/cart_provider.dart';
+import 'package:my_mobile_app/providers/user_provider.dart';
+import 'package:my_mobile_app/ui/screens/admin/admin_screen.dart';
+import 'package:my_mobile_app/ui/screens/auth/login_screen.dart';
+import 'package:my_mobile_app/ui/screens/cartscreen.dart';
+import 'package:my_mobile_app/ui/screens/home_screen.dart';
+import 'package:my_mobile_app/ui/screens/profilescreen.dart';
+import 'package:my_mobile_app/ui/screens/searchscreen.dart';
+import 'package:my_mobile_app/ui/screens/viewmodels/auth_startup_viewmodel.dart';
 
 class RootsScreen extends StatefulWidget {
   static const routName = "/RootsScreen";
@@ -26,7 +26,7 @@ class _RootsScreenState extends State<RootsScreen> {
 
   @override
   void initState() {
-    screens = [HomeScreen(), SearchScreen(), Cartscreen(), Profilescreen()];
+    screens = [const HomeScreen(), const SearchScreen(), const CartScreen(), const ProfileScreen()];
     controller = PageController(initialPage: currentScreen);
 
     super.initState();
@@ -101,7 +101,13 @@ class _RootsScreenState extends State<RootsScreen> {
               },
             ),
             ListTile(
-              leading: const Icon(IconlyLight.bag2),
+              leading: Consumer<CartProvider>(
+                builder: (context, cart, child) => Badge(
+                  label: Text(cart.itemCount.toString()),
+                  isLabelVisible: cart.itemCount > 0,
+                  child: const Icon(IconlyLight.bag_2),
+                ),
+              ),
               title: const Text('Cart'),
               onTap: () {
                 setState(() {
@@ -123,7 +129,21 @@ class _RootsScreenState extends State<RootsScreen> {
               },
             ),
             const Divider(),
-
+            Consumer<UserProvider>(
+              builder: (context, userProvider, child) {
+                if (userProvider.user?.role == 'admin') {
+                  return ListTile(
+                    leading: const Icon(Icons.admin_panel_settings_outlined),
+                    title: const Text('Admin Dashboard'),
+                    onTap: () {
+                      Navigator.pop(context);
+                      Navigator.pushNamed(context, AdminScreen.routeName);
+                    },
+                  );
+                }
+                return const SizedBox.shrink();
+              },
+            ),
             ListTile(
               leading: const Icon(Icons.logout, color: Colors.red),
               title: const Text(
@@ -140,7 +160,7 @@ class _RootsScreenState extends State<RootsScreen> {
         ),
       ),
       body: PageView(
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         controller: controller,
         children: screens,
       ),
@@ -156,22 +176,34 @@ class _RootsScreenState extends State<RootsScreen> {
           controller.jumpToPage(index);
         },
         destinations: [
-          NavigationDestination(
+          const NavigationDestination(
             selectedIcon: Icon(IconlyBold.activity),
             icon: Icon(IconlyLight.activity),
             label: "Home",
           ),
-          NavigationDestination(
+          const NavigationDestination(
             selectedIcon: Icon(IconlyBold.search),
             icon: Icon(IconlyLight.search),
             label: "Search",
           ),
           NavigationDestination(
-            selectedIcon: Icon(IconlyBold.bag2),
-            icon: Icon(IconlyLight.bag2),
+            selectedIcon: Consumer<CartProvider>(
+              builder: (context, cart, child) => Badge(
+                label: Text(cart.itemCount.toString()),
+                isLabelVisible: cart.itemCount > 0,
+                child: const Icon(IconlyBold.bag_2),
+              ),
+            ),
+            icon: Consumer<CartProvider>(
+              builder: (context, cart, child) => Badge(
+                label: Text(cart.itemCount.toString()),
+                isLabelVisible: cart.itemCount > 0,
+                child: const Icon(IconlyLight.bag_2),
+              ),
+            ),
             label: "Cart",
           ),
-          NavigationDestination(
+          const NavigationDestination(
             selectedIcon: Icon(IconlyBold.profile),
             icon: Icon(IconlyLight.profile),
             label: "Profile",

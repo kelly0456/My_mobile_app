@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'package:test_app/data/models/product_model.dart';
-import 'package:test_app/providers/ThemeProvider.dart';
-import 'package:test_app/ui/screens/admin/category_management_screen.dart';
-import 'package:test_app/ui/screens/admin/product_form_screen.dart';
-import 'package:test_app/ui/screens/admin/user_management_screen.dart';
-import 'package:test_app/ui/screens/auth/login_screen.dart';
-import 'package:test_app/ui/screens/viewmodels/auth_startup_viewmodel.dart';
-import 'package:test_app/ui/screens/viewmodels/product_viewmodel.dart';
+import 'package:my_mobile_app/data/models/product_model.dart';
+import 'package:my_mobile_app/providers/theme_provider.dart';
+import 'package:my_mobile_app/ui/screens/admin/category_management_screen.dart';
+import 'package:my_mobile_app/ui/screens/admin/product_form_screen.dart';
+import 'package:my_mobile_app/ui/screens/admin/user_management_screen.dart';
+import 'package:my_mobile_app/ui/screens/auth/login_screen.dart';
+import 'package:my_mobile_app/ui/screens/viewmodels/auth_startup_viewmodel.dart';
+import 'package:my_mobile_app/ui/screens/viewmodels/product_viewmodel.dart';
 
 class AdminScreen extends StatelessWidget {
   static const routeName = '/admin';
@@ -48,6 +48,7 @@ class AdminScreen extends StatelessWidget {
 
     if (confirm != true) return;
 
+    if (!context.mounted) return;
     final authViewModel = context.read<AuthStartupViewModel>();
 
     final success = await authViewModel.logout();
@@ -106,6 +107,7 @@ class AdminScreen extends StatelessWidget {
 
     if (confirm != true) return;
 
+    if (!context.mounted) return;
     final productViewModel = context.read<ProductViewModel>();
 
     final success = await productViewModel.deleteProduct(product.id);
@@ -385,7 +387,7 @@ class AdminScreen extends StatelessWidget {
               isDarkMode ? Icons.light_mode_outlined : Icons.dark_mode_outlined,
             ),
             onPressed: () {
-              themeProvider.getIsDarkTHeme;
+              themeProvider.setDarkTheme(!isDarkMode);
             },
           ),
 

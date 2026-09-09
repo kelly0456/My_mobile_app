@@ -2,76 +2,76 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   // ============================================================
-  // PRIMARY BRAND COLORS
+  // PRIMARY BRAND COLORS - BLUE THEME
   // ============================================================
 
-  static const Color lightPrimary = Color(0xFF6E1890);
-  static const Color lightSecondary = Color(0xFF0D1A6B);
+  static const Color lightPrimary = Color(0xFF1976D2); // Blue 700
+  static const Color lightSecondary = Color(0xFF0D47A1); // Blue 900
 
-  static const Color darkPrimary = Color(0xFF614CAF);
-  static const Color darkSecondary = Color(0xFF1B265E);
+  static const Color darkPrimary = Color(0xFF90CAF9); // Blue 200
+  static const Color darkSecondary = Color(0xFF42A5F5); // Blue 400
 
   // ============================================================
   // LIGHT MODE
   // ============================================================
 
-  static const Color lightScaffoldColor = Color(0xFFF7F9F8);
+  static const Color lightScaffoldColor = Color(0xFFF5F9FF);
 
   static const Color lightCardColor = Color(0xFFFFFFFF);
 
   static const Color lightSurfaceColor = Color(0xFFFFFFFF);
 
-  static const Color lightInputColor = Color(0xFFF1F5F3);
+  static const Color lightInputColor = Color(0xFFE3F2FD);
 
-  static const Color lightAppBarColor = Color(0xFF881890);
+  static const Color lightAppBarColor = Color(0xFF1976D2);
 
   // Text
-  static const Color lightHeadingColor = Color(0xFF17221D);
+  static const Color lightHeadingColor = Color(0xFF01213F);
 
-  static const Color lightTextColor = Color(0xFF26332D);
+  static const Color lightTextColor = Color(0xFF0D1B2A);
 
-  static const Color lightSecondaryTextColor = Color(0xFF66736C);
+  static const Color lightSecondaryTextColor = Color(0xFF415A77);
 
-  static const Color lightHintColor = Color(0xFF89958F);
+  static const Color lightHintColor = Color(0xFF778DA9);
 
   // Buttons
-  static const Color lightButtonColor = Color(0xFF189059);
+  static const Color lightButtonColor = Color(0xFF1976D2);
 
   static const Color lightButtonTextColor = Colors.white;
 
   // Borders
-  static const Color lightBorderColor = Color(0xFFD8E1DC);
+  static const Color lightBorderColor = Color(0xFFBBD2EC);
 
   // ============================================================
   // DARK MODE
   // ============================================================
 
-  static const Color darkScaffoldColor = Color(0xFF0B1510);
+  static const Color darkScaffoldColor = Color(0xFF0B141D);
 
-  static const Color darkCardColor = Color(0xFF14221A);
+  static const Color darkCardColor = Color(0xFF152230);
 
-  static const Color darkSurfaceColor = Color(0xFF17271D);
+  static const Color darkSurfaceColor = Color(0xFF1B2A3B);
 
-  static const Color darkInputColor = Color(0xFF1C2D22);
+  static const Color darkInputColor = Color(0xFF1D2D50);
 
-  static const Color darkAppBarColor = Color(0xFF102018);
+  static const Color darkAppBarColor = Color(0xFF0F172A);
 
   // Text
-  static const Color darkHeadingColor = Color(0xFFF1F7F3);
+  static const Color darkHeadingColor = Color(0xFFE6F1FF);
 
-  static const Color darkTextColor = Color(0xFFE0EAE4);
+  static const Color darkTextColor = Color(0xFFCCD6F6);
 
-  static const Color darkSecondaryTextColor = Color(0xFFA7B6AD);
+  static const Color darkSecondaryTextColor = Color(0xFF8892B0);
 
-  static const Color darkHintColor = Color(0xFF7F9086);
+  static const Color darkHintColor = Color(0xFF495670);
 
   // Buttons
-  static const Color darkButtonColor = Color(0xFF4CAF50);
+  static const Color darkButtonColor = Color(0xFF42A5F5);
 
-  static const Color darkButtonTextColor = Colors.white;
+  static const Color darkButtonTextColor = Color(0xFF0F172A);
 
   // Borders
-  static const Color darkBorderColor = Color(0xFF314238);
+  static const Color darkBorderColor = Color(0xFF233554);
 
   // ============================================================
   // STATUS COLORS
@@ -91,17 +91,17 @@ class AppColors {
 
   static const List<Color> lightCardGradient = [
     Color(0xFFFFFFFF),
-    Color(0xFFEAF7F0),
+    Color(0xFFE3F2FD),
   ];
 
   static const List<Color> lightPrimaryGradient = [
-    Color(0xFF189059),
-    Color(0xFF0D6B43),
+    Color(0xFF1976D2),
+    Color(0xFF0D47A1),
   ];
 
   static const List<Color> lightButtonGradient = [
-    Color(0xFF189059),
-    Color(0xFF0D6B43),
+    Color(0xFF2196F3),
+    Color(0xFF1976D2),
   ];
 
   // ============================================================
@@ -109,17 +109,17 @@ class AppColors {
   // ============================================================
 
   static const List<Color> darkCardGradient = [
-    Color(0xFF1B3022),
-    Color(0xFF102018),
+    Color(0xFF1B2A3B),
+    Color(0xFF0B141D),
   ];
 
   static const List<Color> darkPrimaryGradient = [
-    Color(0xFF4CAF50),
-    Color(0xFF1B5E20),
+    Color(0xFF42A5F5),
+    Color(0xFF1976D2),
   ];
 
   static const List<Color> darkButtonGradient = [
-    Color(0xFF4CAF50),
-    Color(0xFF2E7D32),
+    Color(0xFF64B5F6),
+    Color(0xFF42A5F5),
   ];
 }

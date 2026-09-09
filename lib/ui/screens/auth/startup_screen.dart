@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'package:test_app/root_screen.dart';
-import 'package:test_app/ui/screens/admin/admin_screen.dart';
-import 'package:test_app/ui/screens/auth/login_screen.dart';
-import 'package:test_app/ui/screens/viewmodels/auth_startup_viewmodel.dart';
+import 'package:my_mobile_app/root_screen.dart';
+import 'package:my_mobile_app/ui/screens/admin/admin_screen.dart';
+import 'package:my_mobile_app/ui/screens/auth/login_screen.dart';
+import 'package:my_mobile_app/ui/screens/viewmodels/auth_startup_viewmodel.dart';
 
 class AuthStartupScreen extends StatefulWidget {
   const AuthStartupScreen({super.key});

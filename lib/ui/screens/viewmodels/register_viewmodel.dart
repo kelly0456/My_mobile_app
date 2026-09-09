@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:test_app/data/models/user_model.dart';
-import 'package:test_app/data/repositories/auth_repository.dart';
+import 'package:my_mobile_app/data/models/user_model.dart';
+import 'package:my_mobile_app/data/repositories/auth_repository.dart';
 
 class RegisterViewModel extends ChangeNotifier {
   final AuthRepository _authRepository;
@@ -23,6 +23,7 @@ class RegisterViewModel extends ChangeNotifier {
     required String email,
     required String password,
     required String phoneNumber,
+    String role = 'customer',
   }) async {
     _isLoading = true;
     _errorMessage = null;
@@ -35,6 +36,7 @@ class RegisterViewModel extends ChangeNotifier {
         email: email,
         password: password,
         phoneNumber: phoneNumber,
+        role: role,
       );
 
       return true;

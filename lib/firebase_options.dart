@@ -41,48 +41,47 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyD8ryJvFOJy3jo6Fn8Y4iPoQTNzdwKHifk',
-    appId: '1:277705410335:web:6661796f592a9d6c0c122a',
-    messagingSenderId: '277705410335',
-    projectId: 'ecommerce-app-460ef',
-    authDomain: 'ecommerce-app-460ef.firebaseapp.com',
-    storageBucket: 'ecommerce-app-460ef.firebasestorage.app',
-    measurementId: 'G-H2HS9XS570',
+    apiKey: 'AIzaSyDzNY7KQatMyRquUkn4u4NXe0Jx_3vdXlc',
+    appId: '1:815358437444:web:c1916cba1d10e56f24b411',
+    messagingSenderId: '815358437444',
+    projectId: 'my-mobile-app-e62f5',
+    authDomain: 'my-mobile-app-e62f5.firebaseapp.com',
+    storageBucket: 'my-mobile-app-e62f5.firebasestorage.app',
+    measurementId: 'G-P08QPNTNW3',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDk23sbDh9hGZfUXvjPMrE8gpCs7Ptezv4',
-    appId: '1:277705410335:android:8fe65ae0eb346e1b0c122a',
-    messagingSenderId: '277705410335',
-    projectId: 'ecommerce-app-460ef',
-    storageBucket: 'ecommerce-app-460ef.firebasestorage.app',
+    apiKey: 'AIzaSyDp7GBWsF0eSu7gI6HSypnAVchm0yUS8LM',
+    appId: '1:815358437444:android:e2e4594d26a8ef5424b411',
+    messagingSenderId: '815358437444',
+    projectId: 'my-mobile-app-e62f5',
+    storageBucket: 'my-mobile-app-e62f5.firebasestorage.app',
   );
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAoq_yLWArqUKJCgcdX1srMlMnuJK3TE1U',
-    appId: '1:277705410335:ios:0db59b62853a91520c122a',
-    messagingSenderId: '277705410335',
-    projectId: 'ecommerce-app-460ef',
-    storageBucket: 'ecommerce-app-460ef.firebasestorage.app',
-    iosClientId: '277705410335-i2sk161rm9gf9f9snvmr2n9k750mbcmn.apps.googleusercontent.com',
+    apiKey: 'AIzaSyAdBpqThy7SL6cSdpq2fl8M06usztI4ZdU',
+    appId: '1:815358437444:ios:be11db9134b3437924b411',
+    messagingSenderId: '815358437444',
+    projectId: 'my-mobile-app-e62f5',
+    storageBucket: 'my-mobile-app-e62f5.firebasestorage.app',
     iosBundleId: 'com.example.testApp',
   );
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyAoq_yLWArqUKJCgcdX1srMlMnuJK3TE1U',
-    appId: '1:277705410335:ios:0db59b62853a91520c122a',
-    messagingSenderId: '277705410335',
-    projectId: 'ecommerce-app-460ef',
-    storageBucket: 'ecommerce-app-460ef.firebasestorage.app',
-    iosClientId: '277705410335-i2sk161rm9gf9f9snvmr2n9k750mbcmn.apps.googleusercontent.com',
+    apiKey: 'AIzaSyCl2sQ9pkDTJwNHK5zHTqLAta-QI_hoyKA',
+    appId: '1:914116713401:ios:bfeede2a8b714c06f5f468',
+    messagingSenderId: '914116713401',
+    projectId: 'my-mobile-app-4865b',
+    storageBucket: 'my-mobile-app-4865b.firebasestorage.app',
+    iosClientId: '914116713401-dbv2ad1uu5tfj4ut9qon3bl9ekfqu2er.apps.googleusercontent.com',
     iosBundleId: 'com.example.testApp',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyD8ryJvFOJy3jo6Fn8Y4iPoQTNzdwKHifk',
-    appId: '1:277705410335:web:19b08bc3554b701f0c122a',
-    messagingSenderId: '277705410335',
-    projectId: 'ecommerce-app-460ef',
-    authDomain: 'ecommerce-app-460ef.firebaseapp.com',
-    storageBucket: 'ecommerce-app-460ef.firebasestorage.app',
-    measurementId: 'G-6B9FMDEJK5',
+    apiKey: 'AIzaSyCuPLC0WDwag9VYzNnblvtCvrG1GqjQD_E',
+    appId: '1:914116713401:web:fcf41835f9b90d0af5f468',
+    messagingSenderId: '914116713401',
+    projectId: 'my-mobile-app-4865b',
+    authDomain: 'my-mobile-app-4865b.firebaseapp.com',
+    storageBucket: 'my-mobile-app-4865b.firebasestorage.app',
+    measurementId: 'G-93QTXKRV24',
   );
 }

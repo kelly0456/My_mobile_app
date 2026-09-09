@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../data/models/ category_model.dart';
+import '../../../data/models/category_model.dart';
 import '../viewmodels/category_viewmodel.dart';
 
 class CategoryManagementScreen extends StatelessWidget {
@@ -85,7 +85,9 @@ class CategoryManagementScreen extends StatelessWidget {
 
                           if (success) {
                             // Close the dialog first
-                            Navigator.of(dialogContext).pop();
+                            if (dialogContext.mounted) {
+                              Navigator.of(dialogContext).pop();
+                            }
 
                             // Show message after the dialog closes
                             WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -105,6 +107,8 @@ class CategoryManagementScreen extends StatelessWidget {
                             setDialogState(() {
                               isSaving = false;
                             });
+
+                            if (!context.mounted) return;
 
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
@@ -167,6 +171,7 @@ class CategoryManagementScreen extends StatelessWidget {
     );
 
     if (confirmed != true) return;
+    if (!context.mounted) return;
 
     final viewModel = context.read<CategoryViewModel>();
 
@@ -275,7 +280,7 @@ class CategoryManagementScreen extends StatelessWidget {
 
             itemCount: categories.length,
 
-            separatorBuilder: (_, __) => const SizedBox(height: 8),
+            separatorBuilder: (_, index) => const SizedBox(height: 8),
 
             itemBuilder: (context, index) {
               final category = categories[index];

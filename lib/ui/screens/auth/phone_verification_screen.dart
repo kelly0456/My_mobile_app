@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:test_app/constants/app_colors.dart';
-import 'package:test_app/constants/theme_data.dart';
-import 'package:test_app/ui/screens/auth/widgets/gradient_button.dart';
-import 'package:test_app/ui/screens/viewmodels/register_viewmodel.dart';
+import 'package:my_mobile_app/constants/app_colors.dart';
+import 'package:my_mobile_app/constants/theme_data.dart';
+import 'package:my_mobile_app/ui/screens/auth/widgets/gradient_button.dart';
+import 'package:my_mobile_app/ui/screens/viewmodels/register_viewmodel.dart';
 
 
 class PhoneVerificationScreen extends StatefulWidget {

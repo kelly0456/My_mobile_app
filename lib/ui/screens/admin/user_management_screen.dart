@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'package:test_app/data/models/user_model.dart';
-import 'package:test_app/ui/screens/viewmodels/auth_startup_viewmodel.dart';
-import 'package:test_app/ui/screens/viewmodels/user_management_viewmodel.dart';
+import 'package:my_mobile_app/data/models/user_model.dart';
+import 'package:my_mobile_app/ui/screens/viewmodels/auth_startup_viewmodel.dart';
+import 'package:my_mobile_app/ui/screens/viewmodels/user_management_viewmodel.dart';
 
 class UserManagementScreen extends StatelessWidget {
   static const routeName = '/user-management';
@@ -51,6 +51,7 @@ class UserManagementScreen extends StatelessWidget {
 
     if (confirm != true) return;
 
+    if (!context.mounted) return;
     final viewModel = context.read<UserManagementViewModel>();
 
     final success = await viewModel.changeRole(uid: user.uid, role: newRole);
@@ -116,6 +117,7 @@ class UserManagementScreen extends StatelessWidget {
 
     if (confirm != true) return;
 
+    if (!context.mounted) return;
     final viewModel = context.read<UserManagementViewModel>();
 
     final success = await viewModel.deleteUser(user.uid);

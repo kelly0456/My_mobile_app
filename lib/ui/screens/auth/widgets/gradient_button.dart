@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_app/constants/theme_data.dart';
+import 'package:my_mobile_app/constants/theme_data.dart';
 
 class GradientButton extends StatelessWidget {
   final String text;
