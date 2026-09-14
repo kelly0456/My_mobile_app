@@ -10,6 +10,10 @@ app.use(bodyParser.json());
 
 const port = process.env.PORT || 5000;
 
+app.get('/', (req, res) => {
+    res.send('M-Pesa backend is running!');
+});
+
 // ============================================================
 // GENERATE MPESA ACCESS TOKEN
 // ============================================================
