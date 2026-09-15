@@ -43,6 +43,10 @@ const generateToken = async (req, res, next) => {
 // STK PUSH (LIPA NA MPESA ONLINE)
 // ============================================================
 app.post('/stkpush', generateToken, async (req, res) => {
+    console.log('--- STK PUSH REQUEST RECEIVED ---');
+    console.log('Phone:', req.body.phone);
+    console.log('Amount:', req.body.amount);
+
     const phone = req.body.phone;
     const amount = req.body.amount;
 
