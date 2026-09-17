@@ -3,23 +3,14 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/foundation.dart';
 
 class MpesaService {
-  // IMPORTANT: Replace this with your actual Render URL
-  // Example: 'https://my-mpesa-backend.onrender.com'
-  static const String _renderUrl = 'https://my-mobile-app-ebv6.onrender.com';
+  // Use your backend URL. If testing on Android emulator, use 10.0.2.2 instead of localhost.
+  static const String _baseUrl = kIsWeb ? 'http://localhost:5000' : 'http://10.0.2.2:5000';
 
   Future<Map<String, dynamic>> initiateStkPush({
     required String phone,
     required double amount,
   }) async {
-    // If we are in local development, use localhost/10.0.2.2, otherwise use Render
-    String baseUrl = kDebugMode 
-        ? (kIsWeb ? 'http://localhost:5000' : 'http://10.0.2.2:5000')
-        : _renderUrl;
-
-    // Use Render URL if local testing is not possible
-    final url = Uri.parse('$baseUrl/stkpush');
-
-    debugPrint('M-Pesa: Initiating STK Push to $url');
+    final url = Uri.parse('$_baseUrl/stkpush');
 
     try {
       final response = await http.post(
@@ -27,12 +18,9 @@ class MpesaService {
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({
           'phone': phone,
-          'amount': amount.toInt(),
+          'amount': amount.toInt(), // M-Pesa expects integers for STK Push in sandbox sometimes
         }),
-      ).timeout(const Duration(seconds: 30));
-
-      debugPrint('M-Pesa: Status Code ${response.statusCode}');
-      debugPrint('M-Pesa: Response ${response.body}');
+      );
 
       final data = jsonDecode(response.body);
 
@@ -49,10 +37,9 @@ class MpesaService {
         };
       }
     } catch (e) {
-      debugPrint('M-Pesa Error: $e');
       return {
         'success': false,
-        'message': 'Unable to connect to payment server. Please ensure your backend is live.',
+        'message': 'Error: $e',
       };
     }
   }

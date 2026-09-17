@@ -14,9 +14,7 @@ app.get('/', (req, res) => {
     res.send('M-Pesa backend is running!');
 });
 
-// ============================================================
-// GENERATE MPESA ACCESS TOKEN
-// ============================================================
+// GENERATE MPESA ACCESS TOKEN 
 const generateToken = async (req, res, next) => {
     const consumerKey = process.env.MPESA_CONSUMER_KEY;
     const consumerSecret = process.env.MPESA_CONSUMER_SECRET;
@@ -39,9 +37,8 @@ const generateToken = async (req, res, next) => {
     }
 };
 
-// ============================================================
+//
 // STK PUSH (LIPA NA MPESA ONLINE)
-// ============================================================
 app.post('/stkpush', generateToken, async (req, res) => {
     console.log('--- STK PUSH REQUEST RECEIVED ---');
     console.log('Phone:', req.body.phone);
